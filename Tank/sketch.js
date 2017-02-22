@@ -1,3 +1,7 @@
+console.log("debug");
+
+var grass;
+
 var state = 0;
 
 var ps = [];
@@ -20,6 +24,7 @@ var t = {
 
 
 function setup() {
+  grass = loadImage("grass.png");
   createCanvas(700,700);
   angleMode(DEGREES);
   background(234,78,91);
@@ -38,10 +43,10 @@ function draw() {
   t.show();
   for (var i = 0; i < ps.length; i++){
   ps[i].show();
+  ps[i].move();
+  }
   control();
   border();
- 
-  }
 }
 if(state === 3){
   right();
@@ -55,7 +60,10 @@ if(state === 3){
 
 
 function screen(){
-  background(100);
+  background(grass);
+    noStroke();
+  fill(130,144,133);
+  rect(0,350,700,100);
 
 }
 
@@ -98,14 +106,17 @@ function border(i,x){
   if(t.x >= P5.x){
     console.log("hello");
   }
+  if(t.x >= width && state == 3){
+    state = 2;
+  }
 }
 
 
 
 function P5(){
  
-  this.x = random(100, width),
-  this.y = random(150,height),
+  this.x = random(50, width),
+  this.y = random(20,height),
   this.w = 20,
   this.h = 30,
   this.show = function(){
@@ -114,12 +125,17 @@ function P5(){
   rect(this.x,this.y,this.w,this.h);
   
 }
+  this.move = function(){
+    this.y = this.y +=0.04;
+  }
 }
 
 function right(){
-  background(144,0,0);
-t.y = t.y = 0;
-  
+  background(10,150,10);
+  noStroke();
+  fill(130,144,133);
+  rect(0,350,700,100);
+
 }
 
 

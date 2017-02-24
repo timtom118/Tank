@@ -2,16 +2,16 @@ console.log("debug");
 
 var road = [];
 
-function Stripes(){
+function Stripes(x, width){
   
-  this.x = random(1 * 100)
+  this.x = x,
   this.y = 390,
   this.w = 30,
   this.h = 15,
   this.show = function(){
     stroke(255);
     fill(255);
-    rect(this.x,this.y,this.w,this.h);
+    rect(this.x*40,this.y,this.w,this.h);
   }
   
 }
@@ -22,7 +22,7 @@ var state = 0;
 
 var ps = [];
 
-var bullets = [];
+
 
 var t = {
   x:50,
@@ -47,8 +47,8 @@ function setup() {
   for (var i = 0; i < 4; i++){
   ps[i] = new P5();
 }
-  for(var r = 0; r < 8; r++){
-    road[r] = new Stripes();
+  for(var r = 0; r < 20; r++){
+    road[r] = new Stripes(r, windowWidth);
   }
 print(ps);
 print(road);

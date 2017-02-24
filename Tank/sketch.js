@@ -31,10 +31,10 @@ var t = {
   h:30,
   
   show: function(){
+    
   stroke(255);
   fill(255);
   rect(this.x,this.y,this.w,this.h);
- 
   }
 };
 
@@ -104,7 +104,7 @@ function mousePressed(){
   function control(){
   if (keyIsDown(65))    // "a" key
     t.x-=3;
-   
+    
    
     
 

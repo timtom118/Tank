@@ -1,5 +1,21 @@
 console.log("debug");
 
+var road = [];
+
+function Stripes(){
+  
+  this.x = random(1 * 100)
+  this.y = 390,
+  this.w = 30,
+  this.h = 15,
+  this.show = function(){
+    stroke(255);
+    fill(255);
+    rect(this.x,this.y,this.w,this.h);
+  }
+  
+}
+
 var grass;
 
 var state = 0;
@@ -31,7 +47,11 @@ function setup() {
   for (var i = 0; i < 4; i++){
   ps[i] = new P5();
 }
+  for(var r = 0; r < 8; r++){
+    road[r] = new Stripes();
+  }
 print(ps);
+print(road);
 
 }
 
@@ -47,13 +67,18 @@ function draw() {
   }
   control();
   border();
+  for(var r = 0; r < road.length; r++){
+  road[r].show();
+  }
 }
-if(state === 3){
+if(state === 2){
   right();
   control();
   t.show();
-}else{
-  
+  for(var j = 0; j < road.length; j++){
+  road[j].show();
+  }
+print(road);
 }
 
 }
@@ -80,6 +105,7 @@ function mousePressed(){
   if (keyIsDown(65))    // "a" key
     t.x-=3;
    
+   
     
 
   if (keyIsDown(68))    //  "d" key
@@ -94,22 +120,7 @@ function mousePressed(){
   
   
 
-function border(i,x){
-  if(t.x >= width){
-    t.x = 0;
-    state = 3;
-  }
-  else if(t.x <= 0){
-    t.x = width;
-   state = 2;
-  }
-  if(t.x >= P5.x){
-    console.log("hello");
-  }
-  if(t.x >= width && state == 3){
-    state = 2;
-  }
-}
+
 
 
 
@@ -123,20 +134,14 @@ function P5(){
   stroke(255,0,0);
   fill(255,0,0);
   rect(this.x,this.y,this.w,this.h);
-  
+   
 }
   this.move = function(){
     this.y = this.y +=0.04;
   }
 }
 
-function right(){
-  background(10,150,10);
-  noStroke();
-  fill(130,144,133);
-  rect(0,350,700,100);
 
-}
 
 
 

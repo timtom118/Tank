@@ -13,7 +13,7 @@ function Stripes(x, width){
     fill(255);
     rect(this.x*40,this.y,this.w,this.h);
   }
-  
+
 }
 
 var grass;
@@ -31,13 +31,15 @@ var t = {
   h:30,
   
   show: function(){
-    
+    rotate(15);
   stroke(255);
   fill(255);
   rect(this.x,this.y,this.w,this.h);
+  rotate(-15);
   }
+  
+  
 };
-
 
 function setup() {
   grass = loadImage("grass.png");

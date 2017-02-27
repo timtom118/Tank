@@ -31,11 +31,18 @@ var t = {
   h:30,
   
   show: function(){
+    stroke(255);
+  fill(255);
+  rect(this.x,this.y,this.w,this.h);
+      if (keyIsDown(65)){   // "a" key
+    t.x-=3;
+    
     rotate(15);
   stroke(255);
   fill(255);
   rect(this.x,this.y,this.w,this.h);
   rotate(-15);
+      }
   }
   
   
@@ -104,9 +111,7 @@ function mousePressed(){
 
 
   function control(){
-  if (keyIsDown(65))    // "a" key
-    t.x-=3;
-    
+
    
     
 

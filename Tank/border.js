@@ -10,11 +10,11 @@ function border(i,x){
   if(t.x >= P5.x){
     console.log("hello");
   }
-  if((state == 2) && (t.x <= width)){
-    state = 2;
-  }
-  if((t.x <= 0) && (state = 2)){
-    state = 1;
-  }
   
+  
+  
+  
+  
+  
+ 
 }

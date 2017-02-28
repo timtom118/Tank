@@ -5,6 +5,10 @@ function menu(){
   text("p5*", 330, 330);
   textSize(25);
   text("Click to start", 360, 375);
+}
 
-
+function mousePressed(){
+  if(state === 0){
+    state = 1;
+  }
 }

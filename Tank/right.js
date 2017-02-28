@@ -6,8 +6,6 @@ function Desert(){
    
    
    if(t.x >= width){
-     state = 3;
-    
+     Snow();
    }
-   
 }

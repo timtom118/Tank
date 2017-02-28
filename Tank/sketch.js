@@ -71,6 +71,7 @@ print(road);
 function draw() {
   if (state === 0){
   menu();
+  button.show();
 }if(state === 1){
   screen();
   t.show();
@@ -101,7 +102,6 @@ if(state === 3){
   for(var b = 0; b < road.length; b++){
     road[b].show();
   }
- 
   if(t.x >= width){
     t.x = t.x = 0;
     
@@ -119,6 +119,12 @@ function screen(){
 
 }
 
+function mousePressed(){
+  if(state === 0){
+  state = 1;
+}
+  
+}
 
 
 
@@ -167,12 +173,20 @@ function Snow(){
   background(snow);
   fill(130,144,133);
   rect(0,350,700,100);
+
   fill(255,40);
   rect(100, 300, 100, 50);
   
   t.show();
+
+
 }
 
+function mousePressed(){
+  if(mouseX >= button.x){
+    console.log("worked");
+  }
+}
 
   
 
